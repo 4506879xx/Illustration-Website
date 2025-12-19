@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-main: #faf7f5;
+    --bg-card: #ffffff;
+    --text-main: #2b2b2b;
+    --text-sub: #6b6b6b;
+    --accent: #f2a7b5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', 'Noto Sans TC', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.8;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #eee;
+}
+
+.logo h1 {
+    margin: 0;
+    padding: 20px 0 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0 20px;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width .3s ease;
+}
+
+nav a:hover::after { width: 100%; }
+
+.hero {
+    aspect-ratio: 3 / 1;
+    background-image: url('image/75595002.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero::after {
+    background: rgba(255, 255, 255, 0);
+}
+
+
+.hero-content {
+    position: relative;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    letter-spacing: .2em;
+}
+
+.hero-content p { color: var(--text-sub); }
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+}
+
+section { padding: 80px 20px; }
+
+section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    letter-spacing: .15em;
+}
+
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 40px;
+}
+
+.gallery-item {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    transition: transform .3s ease;
+}
+
+.gallery-item:hover { transform: translateY(-6px); }
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.gallery-item p {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--text-sub);
+}
+
+.about { background: #fff; }
+
+.about-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 40px;
+}
+
+.about-section {
+    background: var(--bg-main);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.about-section h3 {
+    margin-top: 0;
+    color: var(--accent);
+    letter-spacing: .1em;
+}
+
+/* 聯絡方式置中 */
+#contact .about-content {
+    justify-items: center;
+}
+
+#contact .about-section {
+    text-align: center;
+    max-width: 420px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-sub);
+}
+
+@media (max-width:768px) {
+    .hero-content h2 { font-size: 2.2rem; }
+}
